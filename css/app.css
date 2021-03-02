@@ -1,6 +1,11 @@
 :root {
   --key-padding: 2rem;
   --background-body: #ffe8e8;
+  --shades-buttons: 10px 10px 15px rgba(0, 0, 0, 0.2), -10px -10px 15px rgba(255, 255, 255, 0.5);
+  --inner-shades-buttons: 10px 10px 15px rgba(0, 0, 0, 0.2) inset,
+    -10px -10px 15px rgba(255, 255, 255, 0.5) inset;
+  --background-buttons: #ffaec0;
+  --symbol-color: #ffaec0;
 }
 
 *,
@@ -12,6 +17,7 @@
 }
 
 body {
+  margin-top: 20px;
   background-color: var(--background-body);
 }
 
@@ -24,6 +30,8 @@ body {
 
 .calculator__display {
   background-color: white;
+  box-shadow: var(--shades-buttons);
+  border-radius: 20px;
   height: 10rem;
   grid-column: span 4;
   text-align: right;
@@ -36,6 +44,8 @@ body {
 
 .calculator__key {
   cursor: pointer;
+  background-color: transparent;
+  box-shadow: var(--shades-buttons);
   padding: var(--key-padding);
   text-align: center;
   font-size: 2rem;
@@ -43,55 +53,61 @@ body {
   margin: 5px;
 }
 
-.calculator__number {
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
 .calculator__number:hover {
-  background-color: rgba(0, 0, 0, 0.3);
+  box-shadow: var(--inner-shades-buttons);
 }
 
-.calculator__symbol {
-  background-color: rgba(246, 138, 138, 0.5);
+.calculator__symbol:hover {
+  box-shadow: var(--inner-shades-buttons);
 }
 
 .calculator__symbol--clear-all {
+  background-color: var(--background-buttons);
+  color: white;
   grid-column: 4;
   grid-row: 2;
 }
 
 .calculator__symbol--clear-one {
+  background-color: var(--background-buttons);
+  color: white;
   grid-column: 4;
   grid-row: 3;
 }
 
 .calculator__symbol--sum {
+  color: var(--symbol-color);
   grid-column: 4;
   grid-row: 4;
 }
 
 .calculator__symbol--subtract {
+  color: var(--symbol-color);
   grid-column: 4;
   grid-row: 5;
 }
 
 .calculator__symbol--multiplication {
+  color: var(--symbol-color);
   grid-column: 3;
   grid-row: 5;
 }
 
 .calculator__symbol--division {
+  color: var(--symbol-color);
   grid-column: 2;
   grid-row: 5;
 }
 
 .calculator__symbol--dot {
+  color: var(--symbol-color);
   grid-column: 1;
   grid-row: 6;
 }
 
 .calculator__symbol--equal {
+  color: white;
   grid-column: span 3;
-  background-color: rgba(255, 38, 0, 0.8);
-  border-radius: 5%;
+  background-color: var(--background-buttons);
+  border-radius: 20px;
 }
