@@ -1,5 +1,6 @@
 :root {
   --key-padding: 2rem;
+  --background-body: #ffe8e8;
 }
 
 *,
@@ -8,6 +9,10 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+body {
+  background-color: var(--background-body);
 }
 
 .calculator {
@@ -26,6 +31,7 @@
   padding: 0 1.5rem;
   overflow-x: auto;
   white-space: nowrap;
+  margin-bottom: 20px;
 }
 
 .calculator__key {
@@ -33,6 +39,8 @@
   padding: var(--key-padding);
   text-align: center;
   font-size: 2rem;
+  border-radius: 50%;
+  margin: 5px;
 }
 
 .calculator__number {
@@ -85,4 +93,5 @@
 .calculator__symbol--equal {
   grid-column: span 3;
   background-color: rgba(255, 38, 0, 0.8);
+  border-radius: 5%;
 }
